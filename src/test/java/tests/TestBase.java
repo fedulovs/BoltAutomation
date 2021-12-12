@@ -9,7 +9,6 @@ import org.junit.jupiter.api.BeforeAll;
 import web.pages.BoltMainPage;
 
 public class TestBase {
-    BoltMainPage mainPage = new BoltMainPage();
 
     @BeforeAll
     static void setup() {

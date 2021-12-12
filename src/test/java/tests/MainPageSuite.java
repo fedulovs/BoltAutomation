@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import web.pages.BoltMainPage;
 
-public class MainPageSuite {
+public class MainPageSuite extends TestBase{
 
     BoltMainPage mainPage = new BoltMainPage();
 
@@ -19,12 +19,22 @@ public class MainPageSuite {
 
     @Test
     @DisplayName("Open drivers page")
-    @Description("Open App Store and check if app is there")
+    @Description("Open drivers page and check if it contains text for drivers")
     public void openDriversPage() {
         mainPage
                 .openPage()
                 .acceptCookies()
                 .openDriversPage();
+    }
+
+    @Test
+    @DisplayName("Open fleets page")
+    @Description("Open fleets page and check if it contains text for fleets")
+    public void openFleetsPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openFleetsPage();
     }
 
     @Test

@@ -27,7 +27,15 @@ public class BoltMainPage {
 
     @Step("Open drivers page")
     public void openDriversPage() {
-        $$(withText("Стать водителем")).first().click();
+        executeJavaScript("document.getElementsByClassName('menu-item')[1].click()"); // Yes, it's a bad practice to use indexes
+        $(byText("Зарегистрируйтесь в качестве водителя")).shouldBe(visible);
+    }
+
+    @Step("Open drivers page")
+    public void openFleetsPage() {
+        executeJavaScript("document.getElementsByClassName('menu-item')[2].click()"); // Yes, it's a bad practice to use indexes
+        $(byText("Станьте партнером Bolt")).shouldBe(visible);
+        $(byText("Подключайте водителей и автомобили")).shouldBe(visible);
     }
 
     @Step("Open App Store")

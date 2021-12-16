@@ -4,9 +4,9 @@ import io.qameta.allure.Description;
 import models.SocialNetwork;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import web.pages.BoltMainPage;
+import pages.BoltMainPage;
 
-public class MainPageSuite extends TestBase{
+public class MainPageSuite extends TestBase {
 
     BoltMainPage mainPage = new BoltMainPage();
 
@@ -56,19 +56,6 @@ public class MainPageSuite extends TestBase{
                 .acceptCookies()
                 .openGooglePlay();
     }
-
-    /**
-        Ignored, since page is unavailable
-     */
-//    @Test
-//    @DisplayName("Open Facebook")
-//    @Description("Check if Facebook icon leads to Facebook page")
-//    public void openFacebook() {
-//        mainPage
-//                .openPage()
-//                .acceptCookies()
-//                .openSocialNetworkPage(SocialNetwork.FACEBOOK.getName());
-//    }
 
     @Test
     @DisplayName("Open Twitter")

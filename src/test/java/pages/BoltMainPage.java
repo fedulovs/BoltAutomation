@@ -1,4 +1,4 @@
-package web.pages;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -77,15 +77,6 @@ public class BoltMainPage {
         switchTo().window(1);
     }
 
-    @Step("Click on facebook icon")
-    public void openFacebook() {
-        SocialNetworks.facebook.click();
-    }
-
-    @Step("Click in twitter icon")
-    public void openTwitter() {
-        SocialNetworks.twitter.click();
-    }
 
     @Step("Click on network icon")
     public BoltMainPage openSocialNetworkPage(String network) {
@@ -107,7 +98,7 @@ public class BoltMainPage {
 
     @Step("Check if Instagram page contains 'bolt_russia'")
     public BoltMainPage assertInstagramIsOpened() {
-        $(byText("bolt_russia")).shouldBe(visible);
+        $(byText("bolt")).shouldBe(visible);
         return this;
     }
 
@@ -132,13 +123,5 @@ public class BoltMainPage {
         static SelenideElement scooters = $(withText("Самокаты"));
         static SelenideElement food = $(withText("Доставка еды"));
         static SelenideElement cities = $(withText("Города"));
-    }
-
-    public static class SocialNetworks {
-        static SelenideElement facebook = $("[alt='Bolt on Facebook']");
-        static SelenideElement twitter = $("[alt='Bolt on Twitter']");
-        static SelenideElement instagram = $("[alt='Bolt on Instagram']");
-        static SelenideElement linkedin = $("[alt='Bolt on LinkedIn']");
-        static SelenideElement tiktok = $("[alt='Bolt on Tiktok']");
     }
 }

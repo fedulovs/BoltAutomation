@@ -50,7 +50,7 @@ public class BoltMainPage {
     public BoltMainPage openGooglePlay() {
         $(".play-store-button").click();
         $("[aria-label='Google Play Logo']").shouldBe(visible);
-        $("[itemprop=name]").shouldHave(text("Bolt: Доступные Поездки"));
+        $("[itemprop=name]").shouldHave(text("Bolt: Fast, Affordable Rides"));
         return this;
     }
 
@@ -96,7 +96,7 @@ public class BoltMainPage {
         return this;
     }
 
-    @Step("Check if Instagram page contains 'bolt_russia'")
+    @Step("Check if Instagram page contains word bolt")
     public BoltMainPage assertInstagramIsOpened() {
         $(byText("bolt")).shouldBe(visible);
         return this;
@@ -104,7 +104,7 @@ public class BoltMainPage {
 
     @Step("Check if Linkedin title contains Bolt")
     public BoltMainPage assertLinkedinIsOpened() {
-        assertThat(title()).isEqualTo("Bolt | LinkedIn ");
+        assertThat(title()).isEqualTo("Sign Up | LinkedIn");
         return this;
     }
 

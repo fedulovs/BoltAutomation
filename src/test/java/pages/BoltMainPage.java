@@ -31,11 +31,39 @@ public class BoltMainPage {
         $(byText("Зарегистрируйтесь в качестве водителя")).shouldBe(visible);
     }
 
-    @Step("Open drivers page")
+    @Step("Open fleets page")
     public void openFleetsPage() {
         executeJavaScript("document.getElementsByClassName('menu-item')[2].click()"); // Yes, it's a bad practice to use indexes
         $(byText("Станьте партнером Bolt")).shouldBe(visible);
         $(byText("Подключайте водителей и автомобили")).shouldBe(visible);
+    }
+
+    @Step("Open business page")
+    public void openBusinessPage() {
+        executeJavaScript("document.getElementsByClassName('menu-item')[3].click()"); // Yes, it's a bad practice to use indexes
+        $(byText("Быстрые, удобные и доступные деловые поездки")).shouldBe(visible);
+        $(byText("Контролируйте передвижение вашей команды. Поездки на работу, встречи, трансферы в аэропорт," +
+                " поездки для гостей компании. Управляйте всем на одной платформе.")).shouldBe(visible);
+    }
+
+    @Step("Open scooters page")
+    public void openScootersPage() {
+        executeJavaScript("document.getElementsByClassName('menu-item')[4].click()"); // Yes, it's a bad practice to use indexes
+        $(byText("Безопасно.")).shouldBe(visible);
+        $(byText("Доступно.")).shouldBe(visible);
+        $(byText("С заботой об окружающей среде.")).shouldBe(visible);
+    }
+
+    @Step("Open food page")
+    public void openFoodPage() {
+        executeJavaScript("document.getElementsByClassName('menu-item')[5].click()"); // Yes, it's a bad practice to use indexes
+        assertThat(title()).isEqualTo("Bolt Food - Bolt Food");
+    }
+
+    @Step("Open cities page")
+    public void openCitiesPage() {
+        executeJavaScript("document.getElementsByClassName('menu-item')[6].click()"); // Yes, it's a bad practice to use indexes
+        $("[aria-atomic='true']").shouldHave(text("Navigated to Найти город"));
     }
 
     @Step("Open App Store")
@@ -50,7 +78,7 @@ public class BoltMainPage {
     public BoltMainPage openGooglePlay() {
         $(".play-store-button").click();
         $("[aria-label='Google Play Logo']").shouldBe(visible);
-        $("[itemprop=name]").shouldHave(text("Bolt: Fast, Affordable Rides"));
+        $("[itemprop=name]").shouldHave(text("Bolt: Доступные Поездки"));
         return this;
     }
 

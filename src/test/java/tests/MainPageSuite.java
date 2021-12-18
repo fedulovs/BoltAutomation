@@ -42,6 +42,61 @@ public class MainPageSuite extends TestBase {
     }
 
     @Test
+    @AllureId("")
+    @DisplayName("Open business page")
+    @Description("Open business page and check is title contains business")
+    public void openBusinessPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openBusinessPage();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Open scooters page")
+    @Description("Open scooters page and check if title contains business")
+    public void openScootersPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openScootersPage();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Open food page")
+    @Description("Open food page and check if it contains Food in title")
+    public void openFoodPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openFoodPage();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Open food page")
+    @Description("Open food page and check if it contains Food in title")
+    public void openDeliveryPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openFoodPage();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Open cities page")
+    @Description("Open cities page and check if it contains cities")
+    public void openCitiesPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openCitiesPage();
+    }
+
+    @Test
     @AllureId("6229")
     @DisplayName("Open App Store")
     @Description("Open App Store and check if app is there")

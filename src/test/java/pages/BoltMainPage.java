@@ -96,7 +96,7 @@ public class BoltMainPage {
         return this;
     }
 
-    @Step("Check if Instagram page contains 'bolt_russia'")
+    @Step("Check if Instagram page contains 'bolt'")
     public BoltMainPage assertInstagramIsOpened() {
         $(byText("bolt")).shouldBe(visible);
         return this;
@@ -104,7 +104,7 @@ public class BoltMainPage {
 
     @Step("Check if Linkedin title contains Bolt")
     public BoltMainPage assertLinkedinIsOpened() {
-        assertThat(title()).isEqualTo("Bolt | LinkedIn ");
+        assertThat(title()).isEqualTo("Зарегистрироваться | LinkedIn");
         return this;
     }
 

@@ -42,7 +42,7 @@ public class MainPageSuite extends TestBase {
     }
 
     @Test
-    @AllureId("")
+    @AllureId("6235")
     @DisplayName("Open business page")
     @Description("Open business page and check is title contains business")
     public void openBusinessPage() {
@@ -53,7 +53,7 @@ public class MainPageSuite extends TestBase {
     }
 
     @Test
-    @AllureId("")
+    @AllureId("6236")
     @DisplayName("Open scooters page")
     @Description("Open scooters page and check if title contains business")
     public void openScootersPage() {
@@ -64,18 +64,7 @@ public class MainPageSuite extends TestBase {
     }
 
     @Test
-    @AllureId("")
-    @DisplayName("Open food page")
-    @Description("Open food page and check if it contains Food in title")
-    public void openFoodPage() {
-        mainPage
-                .openPage()
-                .acceptCookies()
-                .openFoodPage();
-    }
-
-    @Test
-    @AllureId("")
+    @AllureId("6237")
     @DisplayName("Open food page")
     @Description("Open food page and check if it contains Food in title")
     public void openDeliveryPage() {
@@ -86,7 +75,7 @@ public class MainPageSuite extends TestBase {
     }
 
     @Test
-    @AllureId("")
+    @AllureId("6238")
     @DisplayName("Open cities page")
     @Description("Open cities page and check if it contains cities")
     public void openCitiesPage() {

@@ -43,13 +43,15 @@ gradle clean test
 
 ## Allure TestOps
 
+![allure testops runs](./images/AllureTestopsRuns.png)
+
 ## Launches
 
 ![launches](./img/launches-demo.png)
 
 ## Test Cases
 
-![test-case](./img/test-case-demo.png)
+![allure testops](./images/AllureTestops.png)
 
 ## Jira integration
 

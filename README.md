@@ -39,7 +39,7 @@ gradle clean test
 
 ### Video
 
-![video](./img/demo.gif)
+<img src="./images/video.gif" width="100%" height="100%"/>
 
 ## Allure TestOps
 

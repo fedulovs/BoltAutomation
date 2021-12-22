@@ -34,8 +34,8 @@ public class BoltMainPage {
     @Step("Open fleets page")
     public void openFleetsPage() {
         executeJavaScript("document.getElementsByClassName('menu-item')[2].click()"); // Yes, it's a bad practice to use indexes
-        $(byText("Станьте партнером Bolt")).shouldBe(visible);
-        $(byText("Подключайте водителей и автомобили")).shouldBe(visible);
+        $(byText("Add your Fleet to Bolt")).shouldBe(visible);
+        $(byText("Manage drivers, vehicles and documents.")).shouldBe(visible);
     }
 
     @Step("Open business page")

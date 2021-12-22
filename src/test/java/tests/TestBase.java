@@ -4,7 +4,6 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import helpers.DriverSettings;
-import helpers.DriverUtils;
 import io.qameta.allure.Step;
 import io.qameta.allure.junit5.AllureJunit5;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -24,12 +23,10 @@ public class TestBase {
     @AfterEach
     @Step("Attach artifacts and close driver")
     public void tearDown() {
-        String sessionId = DriverUtils.getSessionId();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
-        Attach.addVideo(sessionId);
+        Attach.addVideo();
 
         Selenide.closeWebDriver();
     }

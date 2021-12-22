@@ -3,6 +3,7 @@ package tests;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
 import models.SocialNetwork;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import pages.BoltMainPage;
@@ -119,7 +120,7 @@ public class MainPageSuite extends TestBase {
                 .assertTwitterIsOpened();
     }
 
-    @Test
+    @Disabled
     @AllureId("6232")
     @DisplayName("Open Instagram")
     @Description("Check if Instagram icon leads to Instagram page")
@@ -131,6 +132,7 @@ public class MainPageSuite extends TestBase {
                 .assertInstagramIsOpened();
     }
 
+    @Disabled
     @Test
     @AllureId("6233")
     @DisplayName("Open Linkedin")

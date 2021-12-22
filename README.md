@@ -43,6 +43,8 @@ gradle clean test
 
 ## Allure TestOps
 
+_Each launch displays it's details in Allure TMS in live regime_
+
 ![allure testops runs](./images/AllureTestopsRuns.png)
 
 ## Launches
@@ -55,7 +57,9 @@ gradle clean test
 
 ## Jira integration
 
-![jira](./img/jira-demo.png)
+_Tests and runs could be integrated with Jira and attached to specific task_
+
+![jira](./images/Jira.png)
 
 ## Telegram report
 

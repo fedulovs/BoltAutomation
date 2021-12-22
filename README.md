@@ -19,7 +19,7 @@ You can run tests by configuring the following parameters:
 * THREADS (number of threads to run)
 * ALLURE_NOTIFICATIONS_VERSION
 
-  ![Parametrised build](./images/JenkinsJob.png)
+  ![Parametrised build](./images/JobSettings.png)
 
 ### To run tests locally with files app.properties and local.properties:
 
@@ -31,7 +31,7 @@ gradle clean test
 
 ### Overview
 
-![overview allure](./img/allure-demo.png)
+![overview allure](./images/JenkinsLaunches.png)
 
 ### Test with steps, attached image, video, page source and console logs
 
@@ -49,7 +49,7 @@ _Each launch displays it's details in Allure TMS in live regime_
 
 ## Launches
 
-![launches](./img/launches-demo.png)
+![launches](./images/Launches.png)
 
 ## Test Cases
 

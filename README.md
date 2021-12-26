@@ -63,5 +63,5 @@ _Tests and runs could be integrated with Jira and attached to specific task_
 
 ## Telegram report
 
-![telegram](./img/telegram-demo.png)
+![telegram](./images/Telegram.png)
 

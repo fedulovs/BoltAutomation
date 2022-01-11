@@ -27,20 +27,23 @@ public class BoltMainPage {
 
     @Step("Open drivers page")
     public void openDriversPage() {
-        executeJavaScript("document.getElementsByClassName('menu-item')[1].click()"); // Yes, it's a bad practice to use indexes
+        // Yes, using indexes is a dirty hack, but it was the only way to click item
+        executeJavaScript("document.getElementsByClassName('menu-item')[1].click()");
         $(byText("Зарегистрируйтесь в качестве водителя")).shouldBe(visible);
     }
 
     @Step("Open fleets page")
     public void openFleetsPage() {
-        executeJavaScript("document.getElementsByClassName('menu-item')[2].click()"); // Yes, it's a bad practice to use indexes
+        // Same
+        executeJavaScript("document.getElementsByClassName('menu-item')[2].click()");
         $(byText("Add your Fleet to Bolt")).shouldBe(visible);
         $(byText("Manage drivers, vehicles and documents.")).shouldBe(visible);
     }
 
     @Step("Open business page")
     public void openBusinessPage() {
-        executeJavaScript("document.getElementsByClassName('menu-item')[3].click()"); // Yes, it's a bad practice to use indexes
+        // Same
+        executeJavaScript("document.getElementsByClassName('menu-item')[3].click()");
         $(byText("Быстрые, удобные и доступные деловые поездки")).shouldBe(visible);
         $(byText("Контролируйте передвижение вашей команды. Поездки на работу, встречи, трансферы в аэропорт," +
                 " поездки для гостей компании. Управляйте всем на одной платформе.")).shouldBe(visible);
@@ -48,7 +51,8 @@ public class BoltMainPage {
 
     @Step("Open scooters page")
     public void openScootersPage() {
-        executeJavaScript("document.getElementsByClassName('menu-item')[4].click()"); // Yes, it's a bad practice to use indexes
+        // Same
+        executeJavaScript("document.getElementsByClassName('menu-item')[4].click()");
         $(byText("Безопасно.")).shouldBe(visible);
         $(byText("Доступно.")).shouldBe(visible);
         $(byText("С заботой об окружающей среде.")).shouldBe(visible);
@@ -56,13 +60,15 @@ public class BoltMainPage {
 
     @Step("Open food page")
     public void openFoodPage() {
-        executeJavaScript("document.getElementsByClassName('menu-item')[5].click()"); // Yes, it's a bad practice to use indexes
+        // Same
+        executeJavaScript("document.getElementsByClassName('menu-item')[5].click()");
         assertThat(title()).isEqualTo("Bolt Food - Bolt Food");
     }
 
     @Step("Open cities page")
     public void openCitiesPage() {
-        executeJavaScript("document.getElementsByClassName('menu-item')[6].click()"); // Yes, it's a bad practice to use indexes
+        // Same
+        executeJavaScript("document.getElementsByClassName('menu-item')[6].click()");
         $("[aria-atomic='true']").shouldHave(text("Navigated to Найти город"));
     }
 

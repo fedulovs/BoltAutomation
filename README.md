@@ -1,7 +1,7 @@
 <code><img height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Bolt_logo.png/200px-Bolt_logo.png"></code>
 
 # Bolt web automation project
-### UI tests for main [page](https://bolt.eu/ "page")
+### UI tests for https://bolt.eu/
 ## Technology Stack:
 
 | Java | Selenide | Gradle | Junit5 | Selenoid | Jenkins | IntelliJ IDEA | Allure Report | Allure Testops | Telegram |

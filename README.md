@@ -41,7 +41,7 @@ gradle clean test
 
 <img src="./images/video.gif" width="100%" height="100%"/>
 
-## Allure TestOps
+## Allure [TestOps](https://allure.autotests.cloud/project/794/test-cases?treeId=1524/ "TestOps") 
 
 _Each launch displays it's details in Allure TMS in live regime_
 

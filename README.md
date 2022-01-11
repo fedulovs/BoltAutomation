@@ -1,4 +1,4 @@
-<code><img height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Bolt_logo.png/200px-Bolt_logo.png"></code>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Bolt_logo.png/200px-Bolt_logo.png">
 
 # Bolt web automation project
 ### UI tests for https://bolt.eu/

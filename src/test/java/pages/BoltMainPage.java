@@ -1,49 +1,52 @@
 package pages;
 
-import com.codeborne.selenide.SelenideElement;
+import config.App;
 import io.qameta.allure.Step;
+import pages.components.Navbar;
 
-import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class BoltMainPage {
 
-    @Step("Open main page")
+    String url = App.config.webUrl();
+    Navbar navbar = new Navbar();
+
+    @Step("Open url and check it's items")
     public BoltMainPage openPage() {
-        open("https://bolt.eu/ru/");
-        String expectedTitle = "Bolt | Быстрые и доступные поездки";
+        openUrl();
+        navbar.checkNavbarItems();
+        return this;
+    }
+
+    @Step("Open url")
+    public BoltMainPage openUrl() {
+        open(url);
         String actualTitle = title();
+        String expectedTitle = "Bolt | Быстрые и доступные поездки";
         assertThat(actualTitle).isEqualTo(expectedTitle);
-
-        $(withText("Быстрые и доступные поездки.")).shouldBe(visible);
-
-        checkNavbarItems();
-
         return this;
     }
 
     @Step("Open drivers page")
     public void openDriversPage() {
-        // Yes, using indexes is a dirty hack, but it was the only way to click item
-        executeJavaScript("document.getElementsByClassName('menu-item')[1].click()");
+        navbar.openTabWithJS(1);
         $(byText("Зарегистрируйтесь в качестве водителя")).shouldBe(visible);
     }
 
     @Step("Open fleets page")
     public void openFleetsPage() {
-        // Same
-        executeJavaScript("document.getElementsByClassName('menu-item')[2].click()");
+        navbar.openTabWithJS(2);
         $(byText("Add your Fleet to Bolt")).shouldBe(visible);
         $(byText("Manage drivers, vehicles and documents.")).shouldBe(visible);
     }
 
     @Step("Open business page")
     public void openBusinessPage() {
-        // Same
-        executeJavaScript("document.getElementsByClassName('menu-item')[3].click()");
+        navbar.openTabWithJS(3);
         $(byText("Быстрые, удобные и доступные деловые поездки")).shouldBe(visible);
         $(byText("Контролируйте передвижение вашей команды. Поездки на работу, встречи, трансферы в аэропорт," +
                 " поездки для гостей компании. Управляйте всем на одной платформе.")).shouldBe(visible);
@@ -51,8 +54,7 @@ public class BoltMainPage {
 
     @Step("Open scooters page")
     public void openScootersPage() {
-        // Same
-        executeJavaScript("document.getElementsByClassName('menu-item')[4].click()");
+        navbar.openTabWithJS(4);
         $(byText("Безопасно.")).shouldBe(visible);
         $(byText("Доступно.")).shouldBe(visible);
         $(byText("С заботой об окружающей среде.")).shouldBe(visible);
@@ -60,15 +62,13 @@ public class BoltMainPage {
 
     @Step("Open food page")
     public void openFoodPage() {
-        // Same
-        executeJavaScript("document.getElementsByClassName('menu-item')[5].click()");
+        navbar.openTabWithJS(5);
         assertThat(title()).isEqualTo("Bolt Food - Bolt Food");
     }
 
     @Step("Open cities page")
     public void openCitiesPage() {
-        // Same
-        executeJavaScript("document.getElementsByClassName('menu-item')[6].click()");
+        navbar.openTabWithJS(6);
         $("[aria-atomic='true']").shouldHave(text("Navigated to Найти город"));
     }
 
@@ -88,18 +88,6 @@ public class BoltMainPage {
         return this;
     }
 
-    @Step("Check the presence of navbar items")
-    public void checkNavbarItems() {
-        Navbar.logo.should(exist);
-        Navbar.ride.should(exist);
-        Navbar.drivers.should(exist);
-        Navbar.fleets.should(exist);
-        Navbar.business.should(exist);
-        Navbar.scooters.should(exist);
-        Navbar.food.should(exist);
-        Navbar.cities.should(exist);
-    }
-
     @Step("Accept all cookies")
     public BoltMainPage acceptCookies() {
        $(".cb-bolt-btn-accept").click();
@@ -111,7 +99,6 @@ public class BoltMainPage {
         switchTo().window(1);
     }
 
-
     @Step("Click on network icon")
     public BoltMainPage openSocialNetworkPage(String network) {
         $("[alt='Bolt on " + network + "']").click();
@@ -120,7 +107,7 @@ public class BoltMainPage {
 
     @Step("Check if Facebook is opened")
     public BoltMainPage assertFacebookIsOpened() {
-        // Page is unavailable
+        // TODO add assertion when page will be restored
         return this;
     }
 
@@ -146,16 +133,5 @@ public class BoltMainPage {
     public BoltMainPage assertTiktokIsOpened() {
         assertThat(title()).isEqualTo("Bolt (@bolt) Official TikTok | Watch Bolt's Newest TikTok Videos");
         return this;
-    }
-
-    public static class Navbar {
-        static SelenideElement logo = $(".logo");
-        static SelenideElement ride = $(withText("Клиентам"));
-        static SelenideElement drivers = $(withText("Стать водителем"));
-        static SelenideElement fleets = $(withText("Перевозчикам"));
-        static SelenideElement business = $(withText("Для бизнеса"));
-        static SelenideElement scooters = $(withText("Самокаты"));
-        static SelenideElement food = $(withText("Доставка еды"));
-        static SelenideElement cities = $(withText("Города"));
     }
 }

@@ -1,8 +1,8 @@
 package tests;
 
+import enums.SocialNetwork;
 import io.qameta.allure.AllureId;
 import io.qameta.allure.Description;
-import models.SocialNetwork;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

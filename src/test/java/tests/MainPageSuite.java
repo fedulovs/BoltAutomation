@@ -109,6 +109,50 @@ public class MainPageSuite extends TestBase {
     }
 
     @Test
+    @AllureId("")
+    @DisplayName("Open drivers page from main page")
+    @Description("Open drivers page and check it's opened")
+    public void openDriversPageFromMain() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .openDriversPageFromMainPage();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Open support center")
+    @Description("Check if support center opens by click on text close to support icon ")
+    public void openSupportCenter() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .clickOnSupportCenterButton();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Check copyright year")
+    @Description("Check if copyright displays current year")
+    public void checkIfCopyrightDisplaysCurrentYear() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .checkCopyrightYear();
+    }
+
+    @Test
+    @AllureId("")
+    @DisplayName("Open legal page")
+    @Description("Click on link in footer and check and check if page opened")
+    public void openLegalPage() {
+        mainPage
+                .openPage()
+                .acceptCookies()
+                .clickOnLegalButton();
+    }
+
+    @Test
     @AllureId("6231")
     @DisplayName("Open Twitter")
     @Description("Check if twitter icon leads to twitter page")

@@ -4,6 +4,8 @@ import config.App;
 import io.qameta.allure.Step;
 import pages.components.Navbar;
 
+import java.util.Calendar;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.byText;
@@ -88,10 +90,33 @@ public class BoltMainPage {
         return this;
     }
 
+    @Step("Click on drivers button")
+    public BoltMainPage openDriversPageFromMainPage() {
+        $(byText("Зарегистрируйтесь в качестве водителя")).click();
+        // This time text is on drivers page
+        $(byText("Зарегистрируйтесь в качестве водителя")).shouldBe(visible);
+        return this;
+    }
+
+    @Step("Click on support center button")
+    public BoltMainPage clickOnSupportCenterButton() {
+        $("[alt='help icon']").sibling(0).click();
+        $(byText("Bolt Food")).shouldBe(visible);
+        $(byText("Bolt Business")).shouldBe(visible);
+        return this;
+    }
+
+    @Step("Click on support legal button")
+    public BoltMainPage clickOnLegalButton() {
+        $(byText("Правовая информация")).click();
+        $(byText("Правовая информация")).shouldBe(visible);
+        return this;
+    }
+
     @Step("Accept all cookies")
     public BoltMainPage acceptCookies() {
-       $(".cb-bolt-btn-accept").click();
-       return this;
+        $(".cb-bolt-btn-accept").click();
+        return this;
     }
 
     @Step("Switch to opened tab")
@@ -133,5 +158,12 @@ public class BoltMainPage {
     public BoltMainPage assertTiktokIsOpened() {
         assertThat(title()).isEqualTo("Bolt (@bolt) Official TikTok | Watch Bolt's Newest TikTok Videos");
         return this;
+    }
+
+    @Step("Check that copyright shows current year")
+    public void checkCopyrightYear() {
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        String copyrightText = "© " + year + " Bolt Technology OÜ";
+        $(byText(copyrightText)).shouldBe(visible);
     }
 }
